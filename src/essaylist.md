@@ -7,5 +7,5 @@ type id: 1805.01978
 
 #### 阶段总结
 
-- [note](http://arxiv.org/abs/1805.01978)
+- [note](https://ayiinnn.github.io/Essay/src/note/note1)
 
