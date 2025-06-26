@@ -2,6 +2,8 @@
 layout: default
 ---
 
+Self-supervised
+
 type id: 1805.01978
 - [Unsupervised Feature Learning via Non-Parametric Instance-level
   Discrimination](http://arxiv.org/abs/1805.01978)
