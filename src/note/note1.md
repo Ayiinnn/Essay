@@ -33,7 +33,7 @@ $$
 
 #### 大数据优化 （类别量极大）
 
-类别数量极多时softmax计算开销大
+存在问题：类别数量极多时softmax计算开销大
 
 解决策略：
 1.hierarchical softmax
