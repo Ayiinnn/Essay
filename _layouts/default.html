@@ -132,25 +132,35 @@
     }
 
     pre {
-      background-color: #f9f5f1; /* 更浅的米棕色背景 */
-      color: #5d4037; /* 深棕色文本 */
+      /* 移除滚动条 */
+      overflow-x: visible; /* 关键修改：禁止水平滚动条 */
+  
+      /* 确保代码自动换行 */
+      white-space: pre-wrap; /* 保留空白符但允许换行 */
+      word-wrap: break-word; /* 允许在单词内换行 */
+      word-break: break-all; /* 强制换行 */
+  
+      /* 其他样式保持不变 */
+      background-color: #f9f5f1;
+      color: #5d4037;
       padding: 1.2rem;
       border-radius: var(--border-radius);
-      overflow-x: auto;
       margin: 1.4rem 0;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e0d7d1; /* 添加浅色边框 */
+      border: 1px solid #e0d7d1;
       font-size: 0.95rem;
       line-height: 1.5;
     }
 
     code {
-      background-color: #faf7f3; /* 更浅的背景色 */
+      background-color: #faf7f3;
       padding: 0.2em 0.4em;
       border-radius: 3px;
-      color: #7d5d53; /* 更深的棕色文本 */
-      border: 1px solid #e6d9d3; /* 更浅的边框 */
+      color: #7d5d53;
+      border: 1px solid #e6d9d3;
       font-size: 0.95rem;
+      /* 行内代码不需要换行处理 */
+      white-space: normal;
     }
 
     pre code {
