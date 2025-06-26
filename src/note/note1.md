@@ -18,13 +18,15 @@ $$
 ```
 分类器本身不包含可训练神经元，利用上游CNN backbone 和projection head的神经元，非参数分类器及训练中积累的特征库进行训练（原先产生的特征向量作为空间中的参考点）
 在每个训练循环都会更新神经元参数 同时将 特征库（memory bank）中的向量初始化为随机值
-损失函数：
 ```
 
 $$
 J(\boldsymbol{\theta})=-\sum_{i=1}^n\log P(i|f_{\boldsymbol{\theta}}(x_i))
 $$
 
+```
+对应损失函数：最小化整个样本集上的的 Negative Log-Likelihood
+```
 
 对比：传统策略:指定个实例对应到一个类，用vm...vn优化权重矩阵wi
 
