@@ -25,6 +25,7 @@ $$
 
 ```
 对比：传统策略:指定个实例对应到一个类，用vm...vn优化权重矩阵wi
+```
 
 $$
 P(i | \mathbf{v}) = \frac{\exp\left(\mathbf{w}_ i^T \mathbf{v}\right)}{\sum_{j=1}^n\exp\left(\mathbf{w}_j^T\mathbf{v}\right)}
@@ -32,7 +33,6 @@ $$
 
 过程中wi与vi在特征空间中无位置联系，优化过程脱节，同时大数据场景下计算和存储w梯度占用资源
 
-```
 
 ---
 
