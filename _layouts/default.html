@@ -5,313 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   
+  <!-- 优化字体：更易读的衬线字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  
   <!-- MathJax 配置 -->
   <script>
     MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [             // 块级公式分隔符
-          ['$$', '$$'],
-          ['\\[', '\\]']
-        ],
-        packages: {'[+]': ['color']},  // 启用颜色扩展
-        tags: 'ams',                   // 启用自动编号
-        macros: {                      // 自定义宏
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        packages: {'[+]': ['color']},
+        tags: 'ams',
+        macros: {
           RR: "\\mathbb{R}",
           bold: ["\\boldsymbol{#1}", 1]
         }
       },
       svg: {
         fontCache: 'global',
-        scale: 0.9                    // 公式缩放比例
-      },
-      startup: {
-        pageReady() {
-          return MathJax.startup.defaultPageReady().then(() => {
-            console.log('MathJax 初始化完成');
-          });
-        }
+        scale: 0.95
       }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
   
-  <!-- 自定义样式 -->
+  <!-- 自定义样式 - 深棕色主题 -->
   <style>
     :root {
-      /* 主题色 */
-      --primary-color: #4a6fa5;
-      --secondary-color: #6d9dc5;
-      --accent-color: #ff6b6b;
-      --light-color: #f8f9fa;
-      --dark-color: #343a40;
-      --text-color: #333;
+      /* 深棕色主题色 */
+      --primary-color: #5d4037;        /* 深棕色 */
+      --secondary-color: #795548;      /* 稍浅的棕色 */
+      --accent-color: #8d6e63;         /* 柔和强调色 */
+      --light-color: #efebe9;          /* 浅米棕色背景 */
+      --dark-color: #3e2723;           /* 接近黑色的深棕 */
+      --text-color: #4e342e;           /* 深棕色文本 */
       
-      /* 间距 */
-      --margin: 1.5rem;
-      --padding: 1.25rem;
-      --border-radius: 8px;
+      /* 间距设置 - 更紧凑 */
+      --margin: 1.2rem;                /* 减小边距 */
+      --padding: 1rem;                 /* 减小内边距 */
+      --border-radius: 6px;
       
-      /* 字体 */
-      --font-main: 'Segoe UI', 'Noto Sans SC', system-ui, sans-serif;
-      --font-mono: 'Fira Code', 'Consolas', monospace;
-      --font-heading: 'Georgia', 'Times New Roman', serif;
+      /* 优化字体 */
+      --font-main: 'Noto Serif SC', Georgia, serif;
+      --font-mono: 'Source Code Pro', 'Consolas', monospace;
+      --font-heading: 'Noto Serif SC', 'Times New Roman', serif;
     }
     
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: var(--font-main);
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: #f5f7fb;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: var(--margin);
-      background-image: linear-gradient(to bottom right, #f0f4f8, #e6f0ff);
-    }
-    
-    /* 页边距设置 */
-    .content-container {
-      background-color: white;
-      border-radius: var(--border-radius);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-      padding: calc(var(--padding) * 1.5);
-      margin-top: var(--margin);
-      margin-bottom: calc(var(--margin) * 2);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    /* 添加装饰性顶部边框 */
-    .content-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    }
-    
-    /* 标题样式 */
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      margin-top: 1.8em;
-      margin-bottom: 0.8em;
-      color: var(--dark-color);
-      position: relative;
-    }
-    
-    h1 {
-      font-size: 2.2rem;
-      margin-top: 0;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--secondary-color);
-    }
-    
-    h2 {
-      font-size: 1.8rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #eaeaea;
-    }
-    
-    h3 {
-      font-size: 1.5rem;
-    }
-    
-    /* 段落样式 */
-    p {
-      margin-bottom: 1.2rem;
-      font-size: 1.1rem;
-      text-align: justify;
-      hyphens: auto;
-    }
-    
-    /* 代码块样式 */
-    pre, code {
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-    }
-    
-    pre {
-      background-color: #2d2d2d;
-      color: #f8f8f2;
-      padding: 1.2rem;
-      border-radius: var(--border-radius);
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    code {
-      background-color: #f0f4f8;
-      padding: 0.2em 0.4em;
-      border-radius: 4px;
-      color: #d6336c;
-    }
-    
-    pre code {
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      color: inherit;
-    }
-    
-    /* 数学公式样式 */
-    .MathJax {
-      font-size: 1.1em !important;
-    }
-    
-    .math-block {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      background-color: #f8f9fa;
-      border-left: 4px solid var(--primary-color);
-      border-radius: 0 var(--border-radius) var(--border-radius) 0;
-      overflow-x: auto;
-    }
-    
-    /* 表格样式 */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    
-    th, td {
-      padding: 0.75rem;
-      text-align: left;
-      border: 1px solid #dee2e6;
-    }
-    
-    th {
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 600;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #f8f9fa;
-    }
-    
-    /* 列表样式 */
-    ul, ol {
-      margin: 1.2rem 0;
-      padding-left: 1.8rem;
-    }
-    
-    li {
-      margin-bottom: 0.5rem;
-    }
-    
-    /* 链接样式 */
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    a:hover {
-      color: var(--accent-color);
-      text-decoration: underline;
-    }
-    
-    /* 引用块样式 */
-    blockquote {
-      border-left: 4px solid var(--secondary-color);
-      background-color: #f8f9fa;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--border-radius) var(--border-radius) 0;
-      font-style: italic;
-      color: #555;
-    }
-    
-    blockquote p {
-      margin-bottom: 0;
-    }
-    
-    /* 响应式设计 */
-    @media (max-width: 768px) {
-      body {
-        padding: 0.8rem;
-      }
-      
-      .content-container {
-        padding: 1.2rem;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-      
-      pre {
-        padding: 0.8rem;
-        font-size: 0.85rem;
-      }
-    }
-    
-    /* 页脚样式 */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #6c757d;
-      font-size: 0.7rem;
-      margin-top: 2rem;
-      border-top: 1px solid #eaeaea;
-    }
-    
-    /* 实用类 */
-    .highlight {
-      background: linear-gradient(120deg, rgba(255,255,0,0.3), rgba(255,255,0,0));
-      padding: 0 0.2em;
-      border-radius: 3px;
-    }
-    
-    .tip-box {
-      background-color: #e6f7ff;
-      border-left: 4px solid #1890ff;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    }
-    
-    .tip-box:before {
-      content: "💡 提示";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #1890ff;
-    }
-  </style>
-</head>
-<body>
-  <div class="content-container">
-    <header>
-      <h1>{{ page.title }}</h1>
-      {% if page.date %}
-        <p class="post-meta">日期: {{ page.date | date: "%Y年%m月%d日" }}</p>
-      {% endif %}
-    </header>
-    
-    <main>
-      {{ content }}
-    </main>
-    
-    <footer>
-      <p>页面最后更新于: {{ site.time | date: "%Y-%m-%d %H:%M" }}</p>
-    </footer>
-  </div>
-</body>
-</html>
+      box-sizing: b
