@@ -1,4 +1,6 @@
-
+---
+layout: default
+---
 
 type id: 1805.01978
 - [Unsupervised Feature Learning via Non-Parametric Instance-level
