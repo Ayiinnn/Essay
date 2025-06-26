@@ -45,7 +45,7 @@ $$
   **[`arXiv 2013`]** *Tomas Mikolov*
 3. NCE
 - [Noise-contrastive estimation: A new estimation principle for unnormalized statistical models](https://proceedings.mlr.press/v9/gutmann10a/gutmann10a.pdf)
-  **[`arXiv 2013`]** *Tomas Mikolov*
+  **[`PMLR2010`]** *Tomas Mikolov*
   
 ---
 
