@@ -46,15 +46,19 @@ $$
 存在问题：类别数量极多时softmax计算开销大
 
 解决策略：
+
 1.hierarchical softmax
 - [A Survey of Neural Network Techniques for Feature Extraction from Text](http://arxiv.org/abs/1704.08531)
   **[`arXiv 2017`]** *Vineet John*
+  
 2. negative sampling
 - [Distributed Representations of Words and Phrases and their Compositionality](http://arxiv.org/abs/1310.4546)
   **[`arXiv 2013`]** *Tomas Mikolov*
+  
 3. NCE
 - [Noise-contrastive estimation: A new estimation principle for unnormalized statistical models](https://proceedings.mlr.press/v9/gutmann10a/gutmann10a.pdf)
   **[`PMLR2010`]** *Tomas Mikolov*
+- 将多类分类问题转化为一组二分类问题
   
 ---
 
