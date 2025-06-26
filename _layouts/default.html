@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  
+  <!-- 添加 MathJax 配置 -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        tags: 'ams'  // 启用自动编号
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <!-- 加载 MathJax 库 -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  {{ content }}  <!-- 这里是页面内容注入点 -->
+</body>
+</html>
