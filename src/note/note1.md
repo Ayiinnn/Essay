@@ -23,6 +23,7 @@ $$
 J(\boldsymbol{\theta})=-\sum_{i=1}^n\log P(i|f_{\boldsymbol{\theta}}(x_i))
 $$
 
+##
 对比：传统策略:指定个实例对应到一个类，用vm...vn优化权重矩阵wi
 
 $$
