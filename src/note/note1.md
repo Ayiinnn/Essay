@@ -10,5 +10,6 @@ P(i | \mathbf{v}) = \frac{\exp\left(\frac{\mathbf{v} i^T \mathbf{v}}{\tau}\right
 $$
 
 分类器本身不包含可训练神经元（学习压力在上游CNN backbone 和projection head）
+
 传统策略：指定个实例对应到一个类，用vm...vn优化权重矩阵wi
 wi与vi在特征空间中无位置联系，优化过程脱节
